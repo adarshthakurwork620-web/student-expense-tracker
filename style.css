@@ -1,0 +1,133 @@
+* {
+             margin: 0;
+             padding: 0; 
+             box-sizing: border-box;
+             font-family: 'Inter', sans-serif; 
+        }
+
+        body {
+             background-image: url(image.png); 
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+
+        }
+
+        /* --- CSS Logic Starts Here --- */
+        /* Hidden Radio Buttons */
+        #login-radio, #signup-radio {
+            display: none;
+        }
+
+        .auth-card {
+            /* max-width: 400px;  */
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            position: relative;
+             /* background: linear-gradient(135deg, #748397 0%, #1d2229 100%); */
+        }
+        
+        /* Tab Controls (Labels act as buttons) */
+        .tab-group {
+            display: flex;
+            background: #f8f9fa;
+            padding: 5px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+        }
+
+        .tab-label {
+            flex: 1;
+            padding: 10px;
+            text-align: center;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 8px;
+            color: #8d99ae;
+            transition: 0.3s;
+        }
+
+        /* Active Tab Styling using CSS Selectors */
+        #login-radio:checked ~ .auth-card .tab-group .login-lbl,
+        #signup-radio:checked ~ .auth-card .tab-group .signup-lbl {
+            background: rgb(234, 141, 233);
+            color: black;
+            box-shadow: -1px 0px 20px 4px rgb(50, 45, 55);
+        }
+
+        /* Show/Hide Forms */
+        .form-content { 
+            display: none; 
+        }
+
+        #login-radio:checked ~ .auth-card #login-form,
+        #signup-radio:checked ~ .auth-card #signup-form {
+            display: block;
+            animation: slideUp 0.4s ease;
+        }
+
+        @keyframes slideUp {
+            from { 
+
+                transform: translateY(10px); 
+            }
+            to { 
+            
+                transform: translateY(0); 
+            }
+        }
+
+        /* UI Styling */
+        h1{
+            margin-bottom: 20px;
+            color: linear-gradient(135deg, #748397 0%, #1d2229 100%);;
+            font-family: monospace;
+            font-weight: bold;
+        }
+        h2 { 
+            font-family: 'Poppins', sans-serif; 
+            margin-bottom: 5px; 
+            text-align: center;
+        }
+        .input-group { 
+            margin-bottom: 15px; 
+        }
+        label {
+             display: block; 
+             font-size: 12px; 
+             font-weight: 600; 
+             margin-bottom: 5px;
+             }
+        input {
+             width: 100%;
+             padding: 12px; 
+             border: 2px solid #edf2f7; 
+             border-radius: 10px;
+             outline: none;
+        }
+        input:hover {
+             box-shadow: -1px 0px 20px 4px blueviolet; 
+             }
+        .auth-btn {
+            width: 100%; 
+            padding: 14px;
+            background: #4361ee;
+            border: none; 
+            border-radius: 10px; 
+            font-weight: 600; 
+            cursor: pointer;
+
+        }
+        .auth-btn:hover{
+              background-color: #357abd;
+              transform: scale(0.98); 
+              box-shadow: 0px 0px 18px 0px rgb(15, 13, 16);
+        }
+        a{
+            text-decoration: none;
+            color: white;
+        }
